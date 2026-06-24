@@ -1,4 +1,5 @@
 from Enemy import *
+import random
 
 class Zombie(Enemy):
 
@@ -10,3 +11,9 @@ class Zombie(Enemy):
 
     def spread_disease(self):
         print("Zombie is spreading infection!")
+
+    def special_attack(self):
+        did_special_attack_work = random.random() < 0.5
+        if did_special_attack_work:
+            self.health += 2
+            print('Zombie special attack worked and health has been increased by 2 points.')
